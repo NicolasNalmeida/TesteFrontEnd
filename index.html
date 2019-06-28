@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Teste Front End</title>
+    <style>
+        body
+        {
+        font-size: 18px;
+        font-family: 'Arial';
+        width: 1140px;
+        margin: 0 auto;
+        padding: 50px;
+        }
+
+        section
+        {
+            margin-bottom: 50px;
+        }
+    </style>
+    
+</head>
+<body>
+    <section>
+        <div>
+            <strong>Nicolas de Almeida Nascimento</strong>
+        </div>
+        <div>
+            <strong>nicolas.anascimento@gmail.com</strong>
+        </div>
+    </section>
+
+    <section>
+        <div>
+            <strong>Original:</strong> <span class="original"></span>
+        </div>
+        <div>        
+            <strong>Invertida:</strong> <span class="conteudo"></span>
+        </div>
+    </section>
+</body>
+<script>
+    (function(){
+        'use strict';
+        var original = document.querySelector('.original');
+        var strVal = 'É pau é pedra é o fim do caminho';
+        original.append(strVal);
+
+        aoContrario(strVal);
+
+        function aoContrario(stringVal)
+        {
+            var conteudo = document.querySelector('.conteudo');
+            var retornoVal = stringVal.split(" ");
+            
+            for(var i = (retornoVal.length - 1); i >= 0; i--)
+            {
+                conteudo.append(retornoVal[i] + " ");
+            }
+        }
+    })();
+</script>
+</html>
